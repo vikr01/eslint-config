@@ -1,0 +1,31 @@
+{
+  "name": "@vikr01/eslint-config",
+  "license": "MIT",
+  "repository": "https://github.com/vikr01/eslint-config/tree/master/packages/eslint-config",
+  "version": "0.0.0",
+  "main": "index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "yarn run clean",
+    "build": "cross-env NODE_ENV=production babel src --out-dir dist --copy-files --root-mode upward",
+    "clean": "rimraf dist",
+    "prepublishOnly": "yarn run build"
+  },
+  "dependencies": {
+    "eslint-config-airbnb-base": "^13.1.0"
+  },
+  "peerDependencies": {
+    "eslint": "^5.11.0",
+    "eslint-plugin-flowtype": "^3.2.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
+  "engines": {
+    "node": ">=6"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "@vikr01/test-eslint-config",
+  "license": "MIT",
+  "repository": "https://github.com/vikr01/eslint-config/tree/master/packages/test-eslint-config",
+  "version": "0.0.0",
+  "devDependencies": {
+    "@vikr01/eslint-config": "*"
+  },
+  "engines": {
+    "node": ">=6"
+  }
+}

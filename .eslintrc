@@ -1,0 +1,81 @@
+{
+  "plugins": ["flowtype", "import"],
+  "extends": [
+    "airbnb-base",
+    "plugin:import/recommended",
+    "prettier",
+    "prettier/flowtype"
+  ],
+  "env": {
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "flowtype/boolean-style": ["error", "boolean"],
+    "flowtype/define-flow-type": "warn",
+    "flowtype/delimiter-dangle": ["error", "never"],
+    "flowtype/generic-spacing": ["error", "never"],
+    "flowtype/no-primitive-constructor-types": "error",
+    "flowtype/no-weak-types": "warn",
+    "flowtype/object-type-delimiter": ["error", "comma"],
+    "flowtype/require-parameter-type": "off",
+    "flowtype/require-return-type": "off",
+    "flowtype/require-valid-file-annotation": "off",
+    "flowtype/semi": ["error", "always"],
+    "flowtype/space-after-type-colon": ["error", "always"],
+    "flowtype/space-before-generic-bracket": ["error", "never"],
+    "flowtype/space-before-type-colon": ["error", "never"],
+    "flowtype/union-intersection-spacing": ["error", "always"],
+    "flowtype/use-flow-type": "error",
+    "flowtype/valid-syntax": "error",
+    "import/no-commonjs": "error",
+    "indent": [2, 2, {"SwitchCase": 1}],
+    "no-unused-vars": "warn",
+    "quotes": [
+      "error",
+      "single",
+      {"avoidEscape": true, "allowTemplateLiterals": true}
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.config.js", "scripts/**/*.js", ".*"],
+      "parserOptions": {
+        "sourceType": "script"
+      },
+      "rules": {
+        "import/no-commonjs": 0,
+        "global-require": 0
+      }
+    },
+    {
+      "files": ["packages/*/index.js"],
+      "parserOptions": {
+        "sourceType": "script"
+      },
+      "rules": {
+        "import/no-commonjs": 0,
+        "global-require": 0,
+        "import/no-unresolved": 0
+      }
+    },
+    {
+      "files": ["*.config.js", "scripts/**/*.js", ".*"],
+      "parserOptions": {
+        "sourceType": "script"
+      },
+      "rules": {
+        "import/no-extraneous-dependencies": 0
+      }
+    },
+    {
+      "files": ["packages/*/test/**/*.js"],
+      "rules": {
+        "import/no-extraneous-dependencies": 0
+      }
+    }
+  ]
+}
