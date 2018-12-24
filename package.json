@@ -1,0 +1,81 @@
+{
+  "private": true,
+  "license": "MIT",
+  "author": "vikr01 <vik120@icloud.com>",
+  "repository": "https://github.com/vikr01/eslint-config.git",
+  "version": "0.0.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "lerna run build",
+    "flow": "flow",
+    "flow-typed": "rimraf flow-typed/npm && flow-typed install --overwrite || :",
+    "postinstall": "yarn run flow-typed",
+    "lint": "eslint .",
+    "lint-fix": "yarn run lint --fix",
+    "postlint-fix": "prettier --ignore-path .eslintignore --write \"**/*.{js,jsx,json,css,scss,less,md,yml}\"",
+    "prepublishOnly": "yarn run build",
+    "test": "cross-env NODE_ENV=test jest",
+    "test-coverage": "yarn test --coverage && codecov"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-flow": "^7.0.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "codecov": "^3.1.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.11.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-flowtype": "^3.2.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.1.2",
+    "flow-bin": "^0.89.0",
+    "flow-typed": "^2.5.1",
+    "husky": "^1.2.1",
+    "jest": "^23.6.0",
+    "lerna": "^3.8.0",
+    "lint-staged": "^8.1.0",
+    "prettier": "^1.15.3",
+    "prettier-package-json": "^2.0.1",
+    "rimraf": "^2.6.2"
+  },
+  "engines": {
+    "node": ">=10",
+    "yarn": ">=1.10"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "*.{js,jsx}": [
+        "eslint --fix",
+        "prettier --ignore-path .eslintignore --write",
+        "git add"
+      ],
+      ".{babelrc,eslintrc,prettierrc}": [
+        "prettier --ignore-path .eslintignore --write",
+        "git add"
+      ],
+      "*.{json,css,scss,less,md,yml}": [
+        "prettier --ignore-path .eslintignore --write",
+        "git add"
+      ],
+      "**/package.json": [
+        "prettier-package-json --write",
+        "git add"
+      ]
+    },
+    "globOptions": {
+      "dot": true
+    }
+  }
+}
