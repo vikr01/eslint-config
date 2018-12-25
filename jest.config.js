@@ -1,3 +1,5 @@
+// @flow
+
 'use strict';
 
 module.exports = {
@@ -9,6 +11,7 @@ module.exports = {
     '!**/.*/**',
     '!**/*.config.js',
     '!packages/*/dist/**',
+    '!packages/*/index.js',
     '!scripts/**',
     '!coverage/**',
   ],

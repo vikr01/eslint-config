@@ -14,12 +14,17 @@
     "prepublishOnly": "yarn run build"
   },
   "dependencies": {
-    "eslint-config-airbnb-base": "^13.1.0"
+    "babel-eslint": "^10.0.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "jest-config": "^23.6.0"
   },
   "peerDependencies": {
     "eslint": "^5.11.0",
     "eslint-plugin-flowtype": "^3.2.0",
-    "eslint-plugin-import": "^2.14.0"
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^22.1.2",
+    "eslint-plugin-markdown": "^1.0.0-rc.0",
+    "eslint-plugin-promise": "^4.0.1"
   },
   "keywords": [
     "eslint",
