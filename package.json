@@ -35,6 +35,8 @@
     "eslint-plugin-flowtype": "^3.2.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^22.1.2",
+    "eslint-plugin-markdown": "^1.0.0-rc.0",
+    "eslint-plugin-promise": "^4.0.1",
     "flow-bin": "^0.89.0",
     "flow-typed": "^2.5.1",
     "husky": "^1.2.1",
@@ -43,6 +45,7 @@
     "lint-staged": "^8.1.0",
     "prettier": "^1.15.3",
     "prettier-package-json": "^2.0.1",
+    "react": "^16.7.0",
     "rimraf": "^2.6.2"
   },
   "engines": {

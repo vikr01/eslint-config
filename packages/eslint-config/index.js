@@ -1,5 +1,3 @@
 'use strict';
 
-const config = require('./dist');
-
-module.exports = config.default || config;
+module.exports = require('./dist').default;

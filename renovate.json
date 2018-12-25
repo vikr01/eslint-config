@@ -1,0 +1,31 @@
+{
+  "extends": ["config:base"],
+
+  "baseBranches": ["dev"],
+
+  "rangeStrategy": "bump",
+
+  "engines": {
+    "rangeStrategy": "replace"
+  },
+
+  "separateMinorPatch": true,
+  "patch": {
+    "automerge": true
+  },
+
+  "packages": [
+    {
+      "packagePattern": "(^|.*-)(eslint|prettier|stylelint)(-.*|$)",
+      "groupName": "linters"
+    },
+    {
+      "packagePattern": "^babel-(plugin|preset)-.*",
+      "groupName": "babel"
+    }
+  ],
+
+  "schedule": "after 6am and before 5pm on saturday",
+
+  "timezone": "America/Los_Angeles"
+}

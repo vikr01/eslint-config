@@ -1,0 +1,264 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`config main 1`] = `
+Object {
+  "errorCount": 11,
+  "fixableErrorCount": 0,
+  "fixableWarningCount": 0,
+  "results": Array [
+    Object {
+      "errorCount": 2,
+      "filePath": "lib/bar.js",
+      "fixableErrorCount": 0,
+      "fixableWarningCount": 0,
+      "messages": Array [
+        Object {
+          "column": 1,
+          "endColumn": 1,
+          "endLine": 6,
+          "line": 3,
+          "message": "Use the global form of 'use strict'.",
+          "nodeType": "Program",
+          "ruleId": "strict",
+          "severity": 2,
+        },
+        Object {
+          "column": 7,
+          "endColumn": 11,
+          "endLine": 3,
+          "line": 3,
+          "message": "'path' is assigned a value but never used.",
+          "nodeType": "Identifier",
+          "ruleId": "no-unused-vars",
+          "severity": 2,
+        },
+      ],
+      "warningCount": 0,
+    },
+    Object {
+      "errorCount": 1,
+      "filePath": "lib/foo.js",
+      "fixableErrorCount": 0,
+      "fixableWarningCount": 0,
+      "messages": Array [
+        Object {
+          "column": 1,
+          "fatal": true,
+          "line": 1,
+          "message": "Parsing error: 'import' and 'export' may appear only with 'sourceType: \\"module\\"'
+
+[0m[31m[1m>[22m[39m[90m 1 | [39m[36mimport[39m path from [32m'path'[39m[33m;[39m[0m
+[0m [90m   | [39m[31m[1m^[22m[39m[0m
+[0m [90m 2 | [39m[0m
+[0m [90m 3 | [39m[36mexport[39m [36mdefault[39m path[33m;[39m[0m
+[0m [90m 4 | [39m[0m",
+          "ruleId": null,
+          "severity": 2,
+        },
+      ],
+      "warningCount": 0,
+    },
+    Object {
+      "errorCount": 5,
+      "filePath": "src/components/Bar.jsx",
+      "fixableErrorCount": 0,
+      "fixableWarningCount": 0,
+      "messages": Array [
+        Object {
+          "column": 1,
+          "endColumn": 59,
+          "endLine": 2,
+          "line": 2,
+          "message": "'react' should be listed in the project's dependencies. Run 'npm i -S react' to add it",
+          "nodeType": "ImportDeclaration",
+          "ruleId": "import/no-extraneous-dependencies",
+          "severity": 2,
+        },
+        Object {
+          "column": 8,
+          "endColumn": 13,
+          "endLine": 2,
+          "line": 2,
+          "message": "'React' is defined but never used.",
+          "nodeType": "Identifier",
+          "ruleId": "no-unused-vars",
+          "severity": 2,
+        },
+        Object {
+          "column": 7,
+          "endColumn": 10,
+          "endLine": 4,
+          "line": 4,
+          "message": "'Foo' is assigned a value but never used.",
+          "nodeType": "Identifier",
+          "ruleId": "no-unused-vars",
+          "severity": 2,
+        },
+        Object {
+          "column": 24,
+          "endColumn": 39,
+          "endLine": 4,
+          "line": 4,
+          "message": "dynamic imports require a leading comment with the webpack chunkname",
+          "nodeType": "CallExpression",
+          "ruleId": "import/dynamic-import-chunkname",
+          "severity": 2,
+        },
+        Object {
+          "column": 9,
+          "endColumn": 4,
+          "endLine": 17,
+          "line": 15,
+          "message": "Expected 'this' to be used by class method 'render'.",
+          "messageId": "missingThis",
+          "nodeType": "FunctionExpression",
+          "ruleId": "class-methods-use-this",
+          "severity": 2,
+        },
+      ],
+      "output": "// @flow
+import React, { Component, lazy, type Node } from 'react';
+
+const Foo = lazy(() => import('./Foo'));
+
+type Props = {};
+
+type State = {};
+
+export default class Bar extends Component<Props, State> {
+  props: Props;
+
+  state: State = {};
+
+  render(): Node {
+    return <div><Foo message={'foobar'} /></div>;
+  }
+}
+",
+      "warningCount": 0,
+    },
+    Object {
+      "errorCount": 2,
+      "filePath": "src/components/Foo.jsx",
+      "fixableErrorCount": 0,
+      "fixableWarningCount": 0,
+      "messages": Array [
+        Object {
+          "column": 1,
+          "endColumn": 27,
+          "endLine": 2,
+          "line": 2,
+          "message": "'react' should be listed in the project's dependencies. Run 'npm i -S react' to add it",
+          "nodeType": "ImportDeclaration",
+          "ruleId": "import/no-extraneous-dependencies",
+          "severity": 2,
+        },
+        Object {
+          "column": 8,
+          "endColumn": 13,
+          "endLine": 2,
+          "line": 2,
+          "message": "'React' is defined but never used.",
+          "nodeType": "Identifier",
+          "ruleId": "no-unused-vars",
+          "severity": 2,
+        },
+      ],
+      "output": "// @flow
+import React from 'react';
+
+type Props = {
+  message: string
+};
+
+export default ({ message }: Props) => (<div>{message}</div>);
+",
+      "warningCount": 0,
+    },
+    Object {
+      "errorCount": 0,
+      "filePath": "src/index.js",
+      "fixableErrorCount": 0,
+      "fixableWarningCount": 0,
+      "messages": Array [],
+      "warningCount": 0,
+    },
+    Object {
+      "errorCount": 1,
+      "filePath": "test/helpers/lint.js",
+      "fixableErrorCount": 0,
+      "fixableWarningCount": 0,
+      "messages": Array [
+        Object {
+          "column": 1,
+          "endColumn": 36,
+          "endLine": 2,
+          "line": 2,
+          "message": "'eslint' should be listed in the project's dependencies. Run 'npm i -S eslint' to add it",
+          "nodeType": "ImportDeclaration",
+          "ruleId": "import/no-extraneous-dependencies",
+          "severity": 2,
+        },
+        Object {
+          "column": 25,
+          "endColumn": 31,
+          "endLine": 7,
+          "line": 7,
+          "message": "Unexpected use of weak type \\"Object\\"",
+          "nodeType": "GenericTypeAnnotation",
+          "ruleId": "flowtype/no-weak-types",
+          "severity": 1,
+        },
+        Object {
+          "column": 40,
+          "endColumn": 46,
+          "endLine": 7,
+          "line": 7,
+          "message": "Unexpected use of weak type \\"Object\\"",
+          "nodeType": "GenericTypeAnnotation",
+          "ruleId": "flowtype/no-weak-types",
+          "severity": 1,
+        },
+        Object {
+          "column": 40,
+          "endColumn": 46,
+          "endLine": 21,
+          "line": 21,
+          "message": "Unexpected use of weak type \\"Object\\"",
+          "nodeType": "GenericTypeAnnotation",
+          "ruleId": "flowtype/no-weak-types",
+          "severity": 1,
+        },
+      ],
+      "warningCount": 3,
+    },
+    Object {
+      "errorCount": 0,
+      "filePath": "test/index.spec.js",
+      "fixableErrorCount": 0,
+      "fixableWarningCount": 0,
+      "messages": Array [],
+      "warningCount": 0,
+    },
+  ],
+  "usedDeprecatedRules": Array [
+    Object {
+      "replacedBy": Array [
+        "padding-line-between-statements",
+      ],
+      "ruleId": "lines-around-directive",
+    },
+    Object {
+      "replacedBy": Array [
+        "func-call-spacing",
+      ],
+      "ruleId": "no-spaced-func",
+    },
+    Object {
+      "replacedBy": Array [],
+      "ruleId": "flowtype/valid-syntax",
+    },
+  ],
+  "warningCount": 3,
+}
+`;
