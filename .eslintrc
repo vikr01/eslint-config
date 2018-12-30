@@ -38,12 +38,13 @@
   },
   "overrides": [
     {
-      "files": ["*.config.js", "scripts/**/*.js", ".*"],
+      "files": ["*.config.js", "**/scripts/**/*.js", ".*"],
       "parserOptions": {
         "sourceType": "script"
       },
       "rules": {
         "import/no-commonjs": 0,
+        "import/no-extraneous-dependencies": 0,
         "global-require": 0
       }
     },
@@ -68,7 +69,10 @@
       }
     },
     {
-      "files": ["packages/*/test/**/*.js"],
+      "files": [
+        "packages/*/test/**/*.js",
+        "packages/eslint-config*/src/overrides/**/*.js"
+      ],
       "rules": {
         "import/no-extraneous-dependencies": 0
       }
