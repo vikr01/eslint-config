@@ -10,13 +10,13 @@
   "scripts": {
     "prebuild": "yarn run clean",
     "build": "cross-env NODE_ENV=production babel src --out-dir dist --copy-files --root-mode upward",
+    "postbuild": "node ./scripts/build-overrides.js",
     "clean": "rimraf dist",
     "prepublishOnly": "yarn run build"
   },
   "dependencies": {
     "babel-eslint": "^10.0.1",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "jest-config": "^23.6.0"
+    "eslint-config-airbnb-base": "^13.1.0"
   },
   "peerDependencies": {
     "eslint": "^5.11.0",

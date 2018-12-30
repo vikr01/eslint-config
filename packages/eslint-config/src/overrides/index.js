@@ -5,7 +5,7 @@ import type {
   ESLintFullConfig,
   ESLintConfigOverrides,
   ESLintOverrideConfig,
-} from './types';
+} from '../types';
 
 const omitInvalidProperties = ({
   overrides,
@@ -34,7 +34,7 @@ const overrides: ESLintConfigOverrides = [
       ...scriptGlobs.testHelpers,
     ],
     rules: {
-      'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+      'import/no-extraneous-dependencies': 0,
     },
   },
   {
