@@ -5,7 +5,7 @@
   "repository": "https://github.com/vikr01/eslint-config/tree/master/packages/test-eslint-config",
   "version": "0.0.0",
   "devDependencies": {
-    "@vikr01/eslint-config": "0.0.0"
+    "@vikr01/eslint-config": "0.0.0-rc.0"
   },
   "engines": {
     "node": ">=6"
