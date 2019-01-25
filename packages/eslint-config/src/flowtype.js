@@ -9,11 +9,7 @@ const rules: RuleDictionary = {
   'flowtype/newline-after-flow-annotation': ['error', 'never'],
   'flowtype/no-dupe-keys': 'error',
   'flowtype/no-primitive-constructor-types': 'error',
-  'flowtype/no-types-missing-file-annotation': [
-    'error',
-    'always',
-    { annotationStyle: 'block' },
-  ],
+  'flowtype/no-types-missing-file-annotation': 'error',
   'flowtype/no-weak-types': 'warn',
   'flowtype/object-type-delimiter': ['error', 'comma'],
   'flowtype/semi': ['error', 'always'],
