@@ -2,7 +2,7 @@
   "name": "@vikr01/eslint-config",
   "license": "MIT",
   "repository": "https://github.com/vikr01/eslint-config/tree/master/packages/eslint-config",
-  "version": "0.0.0-rc.1",
+  "version": "0.0.0-rc.2",
   "main": "index.js",
   "files": [
     "dist"
