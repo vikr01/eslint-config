@@ -48,6 +48,7 @@
     "jest-config": "^23.6.0",
     "lerna": "^3.8.0",
     "lint-staged": "^8.1.0",
+    "peerdep-fixer": "^0.1.5",
     "prettier": "^1.15.3",
     "prettier-package-json": "^2.0.1",
     "react": "^16.7.0",
