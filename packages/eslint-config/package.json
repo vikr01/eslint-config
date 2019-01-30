@@ -12,7 +12,7 @@
     "build": "cross-env NODE_ENV=production babel src --out-dir dist --copy-files --root-mode upward",
     "postbuild": "node ./scripts/build-overrides.js",
     "clean": "rimraf dist",
-    "prepublishOnly": "yarn run build"
+    "prepublishOnly": "fix-peerdeps && yarn run build"
   },
   "dependencies": {
     "babel-eslint": "^10.0.1",
