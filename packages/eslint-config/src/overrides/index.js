@@ -45,6 +45,7 @@ const overrides: ESLintConfigOverrides = [
     rules: {
       'import/no-commonjs': 0,
       'global-require': 0,
+      strict: ['error', 'global'],
     },
   },
   {

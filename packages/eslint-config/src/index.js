@@ -10,12 +10,6 @@ const config: ESLintFullConfig = {
     node: true,
   },
   parser: require.resolve('babel-eslint'),
-  parserOptions: {
-    ecmaFeatures: {
-      experimentalObjectRestSpread: true,
-    },
-    sourceType: 'module',
-  },
   plugins: ['import', 'flowtype', 'jest', 'markdown', 'promise'],
   extends: [
     require.resolve('eslint-config-airbnb-base'),
