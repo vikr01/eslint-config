@@ -1,8 +1,8 @@
-import "./scripts/tsnode.mjs";
-import { createRequire } from "module";
+import './scripts/tsnode.mjs';
+import { createRequire } from 'module';
 
 const require = createRequire(import.meta.url);
-const eslintConfig = require("./packages/eslint-config/src/index.ts");
+const eslintConfig = require('./packages/eslint-config/src/index.ts');
 
 export default eslintConfig.default;
 

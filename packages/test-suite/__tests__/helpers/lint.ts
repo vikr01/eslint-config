@@ -1,25 +1,23 @@
 // @flow
-import { CLIEngine } from 'eslint';
+import { ESLint } from 'eslint';
 import * as path from 'path';
 
 const pathToTestSuite = path.join(__dirname, '../..');
 
-export default (config: Object): Array<Object> => {
-  const cli = new CLIEngine({
-    useEslintrc: false,
+export default async (config: ESLint.Options['baseConfig']): Promise<Array<ESLint.LintResult>> => {
+  const cli = new ESLint({
     baseConfig: config,
     cwd: pathToTestSuite,
-    extensions: ['js', 'jsx', 'md'],
     fix: true,
   });
 
-  const report = cli.executeOnFiles([pathToTestSuite]);
+  const results = await cli.lintFiles([pathToTestSuite]);
 
-  const presanitizedResults = [...report.results];
+  const presanitizedResults = [...results];
 
   /* eslint no-param-reassign: 0 */
-  presanitizedResults.forEach((result: Object) => {
-    const { messages, filePath, source } = result;
+  presanitizedResults.forEach((result: ESLint.LintResult) => {
+    const { filePath, source } = result;
 
     if (filePath) {
       result.filePath = path.relative(pathToTestSuite, filePath);
@@ -28,10 +26,7 @@ export default (config: Object): Array<Object> => {
     if (source) {
       delete result.source;
     }
-
-    if (messages) {
-      presanitizedResults.push(...messages);
-    }
   });
-  return report;
+
+  return presanitizedResults;
 };

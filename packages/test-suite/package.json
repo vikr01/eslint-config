@@ -1,11 +1,12 @@
 {
   "private": true,
-  "name": "@vikr01/eslint-config-test-suite",
+  "name": "private-test-suite",
   "license": "MIT",
-  "repository": "https://github.com/vikr01/eslint-config/tree/master/packages/test-eslint-config",
+  "repository": "https://github.com/vikr01/eslint-config/tree/master/packages/test-suite",
   "version": "9.25.1",
   "devDependencies": {
-    "@vikr01/eslint-config": "*"
+    "@vikr01/eslint-config": "*",
+    "@vikr01/eslint-config-react": "*"
   },
   "engines": {
     "node": ">=20"
