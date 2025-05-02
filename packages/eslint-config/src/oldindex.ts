@@ -1,4 +1,5 @@
 // @flow
+import { defineConfig, globalIgnores } from "eslint/config";
 import flowtypeRules from './flowtype';
 import importRules from './import';
 import overrides from './overrides';

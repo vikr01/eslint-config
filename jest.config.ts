@@ -1,8 +1,6 @@
-// @flow
+import type { Config } from "@jest/types";
 
-'use strict';
-
-module.exports = {
+const config: Config.InitialOptions = {
   rootDir: __dirname,
 
   collectCoverageFrom: [
@@ -20,3 +18,6 @@ module.exports = {
 
   moduleFileExtensions: ['js', 'jsx', 'json'],
 };
+
+
+export default config;

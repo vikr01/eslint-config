@@ -2,36 +2,26 @@
   "name": "@vikr01/eslint-config-react",
   "license": "MIT",
   "repository": "https://github.com/vikr01/eslint-config/tree/master/packages/eslint-config-react",
-  "version": "0.0.0-rc.2",
+  "version": "9.25.1",
   "main": "index.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "prebuild": "yarn run clean",
-    "build": "cross-env NODE_ENV=production babel src --out-dir dist --copy-files --root-mode upward",
-    "clean": "rimraf dist",
-    "prepublishOnly": "fix-peerdeps && yarn run build"
+    "prebuild": "npm run clean",
+    "clean": "rimraf dist"
   },
   "dependencies": {
-    "@vikr01/eslint-config": "0.0.0-rc.2",
-    "eslint-config-airbnb": "^17.1.0"
+    "@vikr01/eslint-config": "^9.25.1"
   },
   "peerDependencies": {
-    "eslint": "^5.11.0",
-    "eslint-plugin-flowtype": "^3.2.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jest": "^22.1.2",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-markdown": "^1.0.0-rc.0",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-react": "^7.11.0"
+    "eslint": "^9.25.1"
   },
   "keywords": [
     "eslint",
     "eslintconfig"
   ],
   "engines": {
-    "node": ">=6"
+    "node": ">=20"
   }
 }
