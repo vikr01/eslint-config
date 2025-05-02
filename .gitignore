@@ -23,5 +23,7 @@ node_modules/
 # Optional eslint cache
 .eslintcache
 
-# flow-typed
-flow-typed/npm
+# Yarn
+yarn.lock
+
+*.tsbuildinfo

@@ -3,11 +3,11 @@
   "name": "@vikr01/eslint-config-test-suite",
   "license": "MIT",
   "repository": "https://github.com/vikr01/eslint-config/tree/master/packages/test-eslint-config",
-  "version": "0.0.0",
+  "version": "9.25.1",
   "devDependencies": {
-    "@vikr01/eslint-config": "0.0.0-rc.0"
+    "@vikr01/eslint-config": "*"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=20"
   }
 }

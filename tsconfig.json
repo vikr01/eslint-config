@@ -1,0 +1,20 @@
+{
+    // This config is ONLY for type-checking actual source code in packages
+    // It is NOT used for any typescript files not in src/
+  
+    "extends": "@tsconfig/recommended",
+  
+    "compilerOptions": {
+        "rootDir": ".",
+        "composite": true,
+        "jsx": "react-jsx",
+        "noEmit": true
+    },
+  
+    "exclude": [
+      "node_modules",
+      "build",
+      "packages/*/build",
+      "testing/"
+    ],
+}
