@@ -4,7 +4,7 @@ import eslint from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 import globals from "globals";
-import json from "@eslint/json";
+// import json from "@eslint/json";
 // import markdown from "@eslint/markdown";
 
 type Params = Readonly<{
@@ -25,16 +25,14 @@ const createConfig = (_params: Params = {}) => defineConfig([
         sourceType: "commonjs",
       },
     },
-    {
-        files: ["**/*.json?(c|5)"],
-        plugins: {
-            json
-        },
-        language: "json/json",
-        rules: {
-            "json/no-duplicate-keys": "error",
-        },
-    },
+    // {
+    //     files: ["tsconfig.json?(c|5)"],
+    //     plugins: {
+    //         json
+    //     },
+    //     language: 'json/jsonc',
+    //     extends: [json.configs.recommended]
+    // },
     // {
     //     files: ["**/*.md"],
     //     plugins: {

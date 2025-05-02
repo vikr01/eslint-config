@@ -1,0 +1,14 @@
+// This needs to be symlinked so ts resolves the paths correctly
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "noEmit": false,
+    "declaration": true,
+    "declarationMap": false,
+    "sourceMap": false,
+  },
+  "include": ["src"]
+}

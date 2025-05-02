@@ -1,5 +1,1 @@
-
-
-const path = require('path');
-
-module.exports = {};
+export default {};

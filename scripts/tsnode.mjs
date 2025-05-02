@@ -1,14 +1,14 @@
-import { register } from "ts-node";
-import { createRequire } from "module";
+import { register } from 'ts-node';
+import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
-const tsConfig = require.resolve("../tsconfig.json");
+const tsConfig = require.resolve('../tsconfig.json');
 
 register({
   emit: false,
   transpileOnly: false,
   project: tsConfig,
   compilerOptions: {
-    module: "CommonJS",
-    moduleResolution: "Node",
+    module: 'CommonJS',
+    moduleResolution: 'Node',
   },
 });
