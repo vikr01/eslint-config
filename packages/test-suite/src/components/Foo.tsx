@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 type Props = {
-  message: string,
+  message: string;
 };
 
-export default ({message}: Props): React.ReactNode => (<div>{message}</div>);
+export default ({ message }: Props): React.ReactNode => <div>{message}</div>;
