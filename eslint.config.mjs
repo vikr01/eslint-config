@@ -4,9 +4,11 @@ import './scripts/tsnode.mjs';
 import { createRequire } from 'module';
 
 const require = createRequire(import.meta.url);
-const eslintConfig = require('./packages/eslint-config/src/index.ts');
+const { createConfig } = require('./packages/eslint-config/src/index.ts');
+
+const tsConfigPath = require.resolve('./tsconfig.json');
 
 export default defineConfig(
-  eslintConfig.default,
+  createConfig({ tsConfigPath }),
   globalIgnores(['packages/*/dist'])
 );
