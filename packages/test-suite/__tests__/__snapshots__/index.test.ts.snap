@@ -1,0 +1,173 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`config > main 1`] = `
+[
+  {
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "filePath": "__tests__/helpers/lint.ts",
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "messages": [],
+    "suppressedMessages": [],
+    "usedDeprecatedRules": [],
+    "warningCount": 0,
+  },
+  {
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "filePath": "__tests__/index.test.ts",
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "messages": [],
+    "suppressedMessages": [],
+    "usedDeprecatedRules": [],
+    "warningCount": 0,
+  },
+  {
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "filePath": "lib/bar.ts",
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "messages": [],
+    "suppressedMessages": [],
+    "usedDeprecatedRules": [],
+    "warningCount": 0,
+  },
+  {
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "filePath": "lib/foo.ts",
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "messages": [],
+    "suppressedMessages": [],
+    "usedDeprecatedRules": [],
+    "warningCount": 0,
+  },
+  {
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "filePath": "src/components/Bar.tsx",
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "messages": [],
+    "suppressedMessages": [
+      {
+        "column": 14,
+        "endColumn": 16,
+        "endLine": 8,
+        "line": 8,
+        "message": "The \`{}\` ("empty object") type allows any non-nullish value, including literals like \`0\` and \`""\`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want \`object\` instead.
+- If you want a type meaning "any value", you probably want \`unknown\` instead.",
+        "messageId": "noEmptyObject",
+        "nodeType": "TSTypeLiteral",
+        "ruleId": "@typescript-eslint/no-empty-object-type",
+        "severity": 2,
+        "suggestions": [
+          {
+            "data": {
+              "replacement": "object",
+            },
+            "desc": "Replace \`{}\` with \`object\`.",
+            "fix": {
+              "range": [
+                233,
+                235,
+              ],
+              "text": "object",
+            },
+            "messageId": "replaceEmptyObjectType",
+          },
+          {
+            "data": {
+              "replacement": "unknown",
+            },
+            "desc": "Replace \`{}\` with \`unknown\`.",
+            "fix": {
+              "range": [
+                233,
+                235,
+              ],
+              "text": "unknown",
+            },
+            "messageId": "replaceEmptyObjectType",
+          },
+        ],
+        "suppressions": [
+          {
+            "justification": "",
+            "kind": "directive",
+          },
+        ],
+      },
+      {
+        "column": 14,
+        "endColumn": 16,
+        "endLine": 10,
+        "line": 10,
+        "message": "The \`{}\` ("empty object") type allows any non-nullish value, including literals like \`0\` and \`""\`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want \`object\` instead.
+- If you want a type meaning "any value", you probably want \`unknown\` instead.",
+        "messageId": "noEmptyObject",
+        "nodeType": "TSTypeLiteral",
+        "ruleId": "@typescript-eslint/no-empty-object-type",
+        "severity": 2,
+        "suggestions": [
+          {
+            "data": {
+              "replacement": "object",
+            },
+            "desc": "Replace \`{}\` with \`object\`.",
+            "fix": {
+              "range": [
+                251,
+                253,
+              ],
+              "text": "object",
+            },
+            "messageId": "replaceEmptyObjectType",
+          },
+          {
+            "data": {
+              "replacement": "unknown",
+            },
+            "desc": "Replace \`{}\` with \`unknown\`.",
+            "fix": {
+              "range": [
+                251,
+                253,
+              ],
+              "text": "unknown",
+            },
+            "messageId": "replaceEmptyObjectType",
+          },
+        ],
+        "suppressions": [
+          {
+            "justification": "",
+            "kind": "directive",
+          },
+        ],
+      },
+    ],
+    "usedDeprecatedRules": [],
+    "warningCount": 0,
+  },
+  {
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "filePath": "src/components/Foo.tsx",
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "messages": [],
+    "suppressedMessages": [],
+    "usedDeprecatedRules": [],
+    "warningCount": 0,
+  },
+]
+`;

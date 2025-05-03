@@ -4,9 +4,11 @@
     "compilerOptions": {
         "rootDir": ".",
 
-        "moduleResolution": "node",
-        "module": "commonjs",
-        "target": "es5",
+
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "target": "ES2020",
+
         "strict": true,
         "declaration": true,
         "declarationMap": false,
@@ -17,6 +19,8 @@
 
         "jsx": "react-jsx",
         "noEmit": true,
+
+        "types": ["vitest/globals"],
     },
   
     "exclude": [
