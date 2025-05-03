@@ -5,10 +5,9 @@
     "extends": "./tsconfig.build.json",
   
     "compilerOptions": {
-        "baseUrl": ".",
         "noEmit": true,
-        // "moduleResolution": "node",
         "module": "ESNext",
-        "target": "ES2024",
+        "moduleResolution": "Bundler",
+        "target": "ESNext"
     },
 }
