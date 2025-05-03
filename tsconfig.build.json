@@ -1,33 +1,21 @@
 {
-    "extends": "@tsconfig/recommended",
+    "extends": "./tsconfig.json",
   
     "compilerOptions": {
-        "rootDir": ".",
-
-
-        "module": "NodeNext",
-        "moduleResolution": "NodeNext",
+        "module": "CommonJS",
+        "moduleResolution": "Node",
         "target": "ES2020",
 
-        "strict": true,
         "declaration": true,
         "declarationMap": false,
         "sourceMap": false,
         "noEmitOnError": true,
         "skipLibCheck": true,
-        "esModuleInterop": true,
-
-        "jsx": "react-jsx",
-        "noEmit": true,
     },
-  
-    "exclude": [
-      "node_modules",
-      "dist",
-      "packages/*/dist",
-    ],
+
+    "include": ["packages/*/src"],
 
     "references": [
       {"path": "./packages/eslint-config"},
-    ]
+  ],
 }

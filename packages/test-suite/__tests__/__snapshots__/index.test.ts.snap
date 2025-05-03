@@ -20,17 +20,6 @@ exports[`config > main 1`] = `
     "fixableErrorCount": 0,
     "fixableWarningCount": 0,
     "messages": [],
-    "output": "import { describe, it, expect } from 'vitest';
-import { defaultConfig as mainConfig } from '../../eslint-config/src/index';
-import lint from './helpers/lint';
-
-describe('config', () => {
-  it('main', async () => {
-    const report = await lint(mainConfig);
-    expect(report).toMatchSnapshot();
-  });
-});
-",
     "suppressedMessages": [],
     "usedDeprecatedRules": [],
     "warningCount": 0,

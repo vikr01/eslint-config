@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import {defaultConfig as mainConfig} from '../../eslint-config/src/index';
+import { defaultConfig as mainConfig } from '@vikr01/eslint-config';
 import lint from './helpers/lint';
 
 describe('config', () => {
