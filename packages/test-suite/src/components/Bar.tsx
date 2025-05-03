@@ -1,16 +1,17 @@
 import * as React from 'react';
 import { Component, lazy } from 'react';
-import * as FooSync from './Foo';
 
-const Foo = lazy(()=>Promise.resolve(FooSync));
+const Foo = lazy(() => import('./Foo'));
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 type Props = {};
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 type State = {};
 
 export default class Bar extends Component<Props, State> {
   props: Props;
-  
+
   state: State = {};
 
   constructor(props: Props) {
@@ -19,6 +20,10 @@ export default class Bar extends Component<Props, State> {
   }
 
   render(): React.ReactNode {
-    return <div><Foo message={'foobar'} /></div>;
+    return (
+      <div>
+        <Foo message={'foobar'} />
+      </div>
+    );
   }
 }
