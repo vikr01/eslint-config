@@ -9,7 +9,7 @@ export default defineConfig({
     },
     exclude: ['**/node_modules/**', 'packages/*/dist/**'],
     include: ['**/*.test.{ts,tsx}'],
-    globals: true,
+    globals: false,
 
     reporters: ['verbose'],
     typecheck: {

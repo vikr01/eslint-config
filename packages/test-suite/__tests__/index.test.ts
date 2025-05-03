@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import mainConfig from '../../eslint-config/src/index';
 import lint from './helpers/lint';
 
