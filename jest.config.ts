@@ -1,23 +1,23 @@
-import type { Config } from "@jest/types";
-import path from "path";
+import type { Config } from '@jest/types';
+import path from 'path';
 
 const config: Config.InitialOptions = {
   rootDir: __dirname,
 
   testEnvironment: require.resolve('jest-environment-jsdom'),
-  preset: path.join(require.resolve("ts-jest/package.json"), ".."),
-  moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
+  preset: path.join(require.resolve('ts-jest/package.json'), '..'),
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
   transform: {
-    "^.+\\.(ts|tsx)$": [
-      require.resolve("ts-jest"),
+    '^.+\\.(ts|tsx)$': [
+      require.resolve('ts-jest'),
       {
-        tsconfig: require.resolve("./tsconfig.json"),
+        tsconfig: require.resolve('./tsconfig.json'),
       },
     ],
   },
-  testPathIgnorePatterns: ["/node_modules/", "/dist/"],
+  testPathIgnorePatterns: ['/node_modules/', '/dist/'],
   testMatch: [
-    "**/__tests__/**/*.(test|spec).(ts|tsx|js|jsx)", // Match only .test.ts/.test.tsx/.test.js/.test.jsx files in __tests__ folders
+    '**/__tests__/**/*.(test|spec).(ts|tsx|js|jsx)', // Match only .test.ts/.test.tsx/.test.js/.test.jsx files in __tests__ folders
   ],
 
   collectCoverageFrom: [
@@ -36,6 +36,5 @@ const config: Config.InitialOptions = {
 
   coverageDirectory: './coverage/',
 };
-
 
 export default config;

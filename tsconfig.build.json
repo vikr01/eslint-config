@@ -17,9 +17,6 @@
 
         "jsx": "react-jsx",
         "noEmit": true,
-        // "paths": {
-        //   "@vikr01/eslint-config": ["./packages/eslint-config/src/index"]
-        // }
     },
   
     "exclude": [
