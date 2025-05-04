@@ -1,11 +1,11 @@
 // @flow
-import { ESLint } from 'eslint';
-import * as path from 'path';
+import { ESLint } from "eslint";
+import * as path from "path";
 
-const pathToTestSuite = path.join(__dirname, '../..');
+const pathToTestSuite = path.join(__dirname, "../..");
 
 export default async (
-  config: ESLint.Options['baseConfig']
+  config: ESLint.Options["baseConfig"],
 ): Promise<Array<ESLint.LintResult>> => {
   const cli = new ESLint({
     baseConfig: config,

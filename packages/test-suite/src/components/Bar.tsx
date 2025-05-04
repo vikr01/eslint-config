@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-object-type */
-import * as React from 'react';
-import { Component, lazy } from 'react';
-import * as FooSync from './Foo';
+import * as React from "react";
+import { Component, lazy } from "react";
+import * as FooSync from "./Foo";
 
 const Foo = lazy(() => Promise.resolve(FooSync));
 
@@ -22,7 +22,7 @@ export default class Bar extends Component<Props, State> {
   render(): React.ReactNode {
     return (
       <div>
-        <Foo message={'foobar'} />
+        <Foo message={"foobar"} />
       </div>
     );
   }

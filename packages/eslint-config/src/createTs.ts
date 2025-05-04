@@ -1,10 +1,14 @@
+import type { Config } from "@eslint/config-helpers";
+
 type Params = Readonly<{ tsConfigPath: string | undefined }>;
 
-const createConfig = ({ tsConfigPath }: Params) => ({
-  files: ['**/*.{ts,tsx}'],
+const createConfig = ({ tsConfigPath }: Params): Config => ({
+  files: ["**/*.{ts,tsx}"],
   languageOptions: {
     parserOptions: {
-      project: [tsConfigPath as string],
+      projectService: {
+        project: tsConfigPath != null ? [tsConfigPath] : tsConfigPath,
+      },
     },
   },
 });
