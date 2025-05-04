@@ -6,9 +6,6 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "noEmit": false,
-    "declaration": true,
-    "declarationMap": false,
-    "sourceMap": false,
   },
   "include": ["src"]
 }

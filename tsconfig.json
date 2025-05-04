@@ -4,6 +4,7 @@
     "compilerOptions": {
         "noEmit": true,
         "rootDir": ".",
+        "baseUrl": ".",
 
         "module": "ESNext",
         "moduleResolution": "Bundler",
@@ -12,6 +13,11 @@
         "strict": true,
 
         "jsx": "react-jsx",
+
+        "paths": {
+            "@vikr01/eslint-config": ["./packages/eslint-config/src"],
+            "@vikr01/eslint-config/*": ["./packages/eslint-config/src/*"],
+        },
     },
   
     "exclude": [
