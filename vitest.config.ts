@@ -1,6 +1,8 @@
 import { defineConfig } from "vitest/config";
+import tsconfigPaths from "vite-tsconfig-paths";
 import { createRequire } from "module";
 const require = createRequire(import.meta.url);
+const tsConfigPath = require.resolve("./tsconfig.json");
 
 export default defineConfig({
   test: {
@@ -13,7 +15,7 @@ export default defineConfig({
 
     reporters: ["verbose"],
     typecheck: {
-      tsconfig: require.resolve("./tsconfig.json"),
+      tsconfig: tsConfigPath,
     },
 
     coverage: {
@@ -38,4 +40,6 @@ export default defineConfig({
     mockReset: true,
     watch: false,
   },
+
+  plugins: [tsconfigPaths({ projects: [tsConfigPath] })],
 });
