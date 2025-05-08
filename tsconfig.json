@@ -6,9 +6,9 @@
         "rootDir": ".",
         "baseUrl": ".",
 
-        "module": "ESNext",
-        "moduleResolution": "Bundler",
-        "target": "ESNext",
+        "module": "CommonJS",
+        "moduleResolution": "Node",
+        "target": "ES2020",
 
         "strict": true,
 

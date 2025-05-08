@@ -1,8 +1,10 @@
 import { defineConfig } from "vitest/config";
 import tsconfigPaths from "vite-tsconfig-paths";
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
-const tsConfigPath = require.resolve("./tsconfig.json");
+// import { createRequire } from "module";
+// const require = createRequire(import.meta.url);
+
+// todo, change this to require.resolve
+const tsConfigPath = "./tsconfig.json";
 
 export default defineConfig({
   test: {

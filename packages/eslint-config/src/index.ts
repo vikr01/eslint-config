@@ -1,33 +1,57 @@
+import type { MergeDeep } from "type-fest";
+
 import { defineConfig } from "eslint/config";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 import createJs from "./configs/createJs";
 import cjs from "./configs/cjs";
 import ignores from "./configs/ignores";
 import createTs from "./configs/createTs";
-import json from "./configs/json";
+import jsonConfig from "./configs/json";
 // import md from './md';
 
-type Params = Readonly<{
-  tsConfigPath: Parameters<typeof createTs>[0]["tsConfigPath"];
-}>;
+type TypescriptParams =
+  | {
+      typescript: true;
+      tsConfigPath: Parameters<typeof createTs>[0]["tsConfigPath"];
+    }
+  | {
+      typescript: false;
+    };
 
-export const createConfig = ({
-  tsConfigPath,
-}: Params): ReturnType<typeof defineConfig> => {
+type OtherParams = {
+  enableIgnores?: false;
+
+  // TODO: support jsConfigPath
+  jsConfigPath?: string;
+
+  json?: boolean;
+};
+
+type Params = Readonly<MergeDeep<TypescriptParams, OtherParams>>;
+
+export const createConfig = (
+  params: Params,
+): ReturnType<typeof defineConfig> => {
+  const { enableIgnores = true, json: lintJson = true, typescript } = params;
   const jsConfig = createJs({});
 
-  return defineConfig(
+  const configs = [
     jsConfig,
-    createTs({ jsConfig, tsConfigPath }),
+    typescript && createTs({ jsConfig, tsConfigPath: params.tsConfigPath }),
     cjs,
     // md,
-    json,
-    ignores,
+    lintJson && jsonConfig,
+    enableIgnores && ignores,
     eslintPluginPrettierRecommended,
+  ].filter(
+    Boolean as unknown as <T>(x: T) => x is NonNullable<Exclude<T, false>>,
   );
+
+  return defineConfig(...configs);
 };
 
 const defaultValue: Params = {
+  typescript: true,
   tsConfigPath: undefined,
 };
 

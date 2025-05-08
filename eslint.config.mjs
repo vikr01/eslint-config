@@ -9,6 +9,6 @@ const { createConfig } = require("@vikr01/eslint-config");
 const tsConfigPath = require.resolve("./tsconfig.json");
 
 export default defineConfig(
-  createConfig({ tsConfigPath }),
+  createConfig({ typescript: true, tsConfigPath }),
   globalIgnores(["packages/*/dist"]),
 );
