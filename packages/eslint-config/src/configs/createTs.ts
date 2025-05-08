@@ -3,8 +3,10 @@ import type {
   ConfigWithExtends as Config,
   Config as ConfigWithoutExtends,
 } from "@eslint/config-helpers";
-import { configs as tsEslintConfigs } from "typescript-eslint";
 import type { ESLintRules } from "eslint/rules";
+
+import { configs as tsEslintConfigs } from "typescript-eslint";
+import { basename, dirname } from "path";
 import nativeRules from "./helpers/nativeRules";
 
 type ESLintRule = keyof ESLintRules;
@@ -22,13 +24,17 @@ type Params = Readonly<{ jsConfig?: Config; tsConfigPath: string | undefined }>;
 const createConfig = ({ jsConfig, tsConfigPath }: Params): Config => {
   const { extends: jsExtends = [], ...jsWithoutExtends } = jsConfig ?? {};
 
+  // const project =
+  //   tsConfigPath != null ? `./${basename(tsConfigPath)}` : undefined;
+  // console.log("project", project);
+
   return {
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
       parserOptions: {
-        projectService: {
-          project: tsConfigPath != null ? [tsConfigPath] : tsConfigPath,
-        },
+        project: tsConfigPath != null ? [basename(tsConfigPath)] : undefined,
+        tsconfigRootDir:
+          tsConfigPath != null ? dirname(tsConfigPath) : undefined,
       },
     },
     extends: [
