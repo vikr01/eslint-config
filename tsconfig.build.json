@@ -16,6 +16,8 @@
     "include": ["packages/*/src"],
 
     "references": [
-        {"path": "./packages/eslint-config"},
+        {
+            "path": "./packages/eslint-config/tsconfig.build.json",
+        },
     ],
 }
