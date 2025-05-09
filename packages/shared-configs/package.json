@@ -1,4 +1,5 @@
 {
     "name": "private-shared-configs",
-    "private": true
+    "private": true,
+    "version": "1.0.0-alpha.0"
 }

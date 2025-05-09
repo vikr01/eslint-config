@@ -2,7 +2,7 @@
   "name": "@vikr01/eslint-config",
   "license": "MIT",
   "repository": "https://github.com/vikr01/eslint-config/tree/master/packages/eslint-config",
-  "version": "9.25.1",
+  "version": "1.0.0-alpha.0",
   "type": "commonjs",
   "exports": {
     ".": "./dist/index.js"
