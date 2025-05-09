@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import type { MergeDeep } from "type-fest";
 
 import { defineConfig } from "eslint/config";
@@ -5,14 +6,14 @@ import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended"
 import createJs from "./configs/createJs";
 import cjs from "./configs/cjs";
 import ignores from "./configs/ignores";
-import createTs from "./configs/createTs";
-import jsonConfig from "./configs/json";
+import type * as createTs from "./configs/createTs";
+import type * as jsonConfig from "./configs/json";
 // import md from './md';
 
 type TypescriptParams =
   | {
       typescript: true;
-      tsConfigPath: Parameters<typeof createTs>[0]["tsConfigPath"];
+      tsConfigPath: Parameters<typeof createTs.default>[0]["tsConfigPath"];
     }
   | {
       typescript: false;
@@ -37,10 +38,14 @@ export const createConfig = (
 
   const configs = [
     jsConfig,
-    typescript && createTs({ jsConfig, tsConfigPath: params.tsConfigPath }),
+    typescript &&
+      (require("./configs/createTs") as typeof createTs).default({
+        jsConfig,
+        tsConfigPath: params.tsConfigPath,
+      }),
     cjs,
     // md,
-    lintJson && jsonConfig,
+    lintJson && (require("./configs/json") as typeof jsonConfig).default,
     enableIgnores && ignores,
     eslintPluginPrettierRecommended,
   ].filter(
