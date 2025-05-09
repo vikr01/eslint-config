@@ -1,5 +1,6 @@
 import { defineConfig } from "vitest/config";
 import tsconfigPaths from "vite-tsconfig-paths";
+import { viteRequire } from "vite-require";
 // import { createRequire } from "module";
 // const require = createRequire(import.meta.url);
 
@@ -43,5 +44,5 @@ export default defineConfig({
     watch: false,
   },
 
-  plugins: [tsconfigPaths({ projects: [tsConfigPath] })],
+  plugins: [viteRequire(), tsconfigPaths({ projects: [tsConfigPath] })],
 });

@@ -33,7 +33,7 @@ type Params = Readonly<MergeDeep<TypescriptParams, OtherParams>>;
 export const createConfig = (
   params: Params,
 ): ReturnType<typeof defineConfig> => {
-  const { enableIgnores = true, json: lintJson = true, typescript } = params;
+  const { enableIgnores = true, json: lintJson = false, typescript } = params;
   const jsConfig = createJs({});
 
   const configs = [
@@ -54,10 +54,3 @@ export const createConfig = (
 
   return defineConfig(...configs);
 };
-
-const defaultValue: Params = {
-  typescript: true,
-  tsConfigPath: undefined,
-};
-
-export const defaultConfig = createConfig(defaultValue);
