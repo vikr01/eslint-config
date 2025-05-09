@@ -3,9 +3,9 @@
   "name": "private-test-suite",
   "license": "MIT",
   "repository": "https://github.com/vikr01/eslint-config/tree/master/packages/test-suite",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "devDependencies": {
-    "@vikr01/eslint-config": "^1.0.0-alpha.0",
+    "@vikr01/eslint-config": "^1.0.0-alpha.1",
     "@vikr01/eslint-config-react": "*"
   },
   "engines": {
