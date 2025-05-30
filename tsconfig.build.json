@@ -1,19 +1,19 @@
 {
-    "extends": "./tsconfig.json",
-  
-    "compilerOptions": {
-        "declaration": true,
-        "declarationMap": false,
-        "sourceMap": false,
-        "noEmitOnError": true,
-        "skipLibCheck": true,
+  "extends": "./tsconfig.json",
+
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": false,
+    "sourceMap": false,
+    "noEmitOnError": true,
+    "skipLibCheck": true,
+  },
+
+  "include": ["packages/*/src"],
+
+  "references": [
+    {
+      "path": "./packages/eslint-config/tsconfig.build.json",
     },
-
-    "include": ["packages/*/src"],
-
-    "references": [
-        {
-            "path": "./packages/eslint-config/tsconfig.build.json",
-        },
-    ],
+  ],
 }

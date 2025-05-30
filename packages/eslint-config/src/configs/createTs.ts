@@ -6,8 +6,8 @@ import type {
 import type { ESLintRules } from "eslint/rules";
 
 import { configs as tsEslintConfigs } from "typescript-eslint";
-import { basename, dirname } from "path";
 import nativeRules from "./helpers/nativeRules";
+import createTsLanguageOptions from "./helpers/createTsLanguageOptions";
 
 type ESLintRule = keyof ESLintRules;
 type TSEslintRules = `@typescript-eslint/${ESLintRule}`;
@@ -31,11 +31,7 @@ const createConfig = ({ jsConfig, tsConfigPath }: Params): Config => {
   return {
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
-      parserOptions: {
-        project: tsConfigPath != null ? [basename(tsConfigPath)] : undefined,
-        tsconfigRootDir:
-          tsConfigPath != null ? dirname(tsConfigPath) : undefined,
-      },
+      ...createTsLanguageOptions({ tsConfigPath }),
     },
     extends: [
       ...jsExtends,

@@ -3,9 +3,9 @@
 import { defineConfig } from "eslint/config";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 import createJs from "./configs/createJs";
-import cjs from "./configs/cjs";
+import createCjs from "./configs/createCjs";
 import ignores from "./configs/ignores";
-import type * as createTs from "./configs/createTs";
+import type * as createTsModule from "./configs/createTs";
 import type * as jsonConfig from "./configs/json";
 import type * as createBrowserType from "./configs/createBrowser";
 import type { Params } from "./types";
@@ -22,18 +22,23 @@ export const createConfig = (
   } = params;
   const jsConfig = createJs({});
 
+  let tsConfigPath;
+  if (typescript === true) {
+    tsConfigPath = params.tsConfigPath;
+  }
+
   const configs = [
     jsConfig,
     typescript === true &&
-      (require("./configs/createTs") as typeof createTs).default({
+      (require("./configs/createTs") as typeof createTsModule).default({
         jsConfig,
-        tsConfigPath: params.tsConfigPath,
+        tsConfigPath,
       }),
     browser != null &&
       (require("./configs/createBrowser") as typeof createBrowserType).default(
         browser,
       ),
-    cjs,
+    createCjs({ jsConfig, tsConfigPath }),
     // md,
     lintJson === true &&
       (require("./configs/json") as typeof jsonConfig).default,
