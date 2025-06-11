@@ -1,4 +1,4 @@
-import { defineConfig } from "vitest/config";
+import { defineConfig, configDefaults } from "vitest/config";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { viteRequire } from "vite-require";
 // import { createRequire } from "module";
@@ -9,15 +9,13 @@ const tsConfigPath = "./tsconfig.json";
 
 export default defineConfig({
   test: {
-    deps: {
-      moduleDirectories: ["node_modules"],
-    },
-    exclude: ["**/node_modules/**", "packages/*/dist/**"],
+    exclude: ["packages/*/dist/**", ...configDefaults.exclude],
     include: ["**/*.test.{ts,tsx}"],
     globals: false,
 
     reporters: ["verbose"],
     typecheck: {
+      ...configDefaults.typecheck,
       tsconfig: tsConfigPath,
     },
 
